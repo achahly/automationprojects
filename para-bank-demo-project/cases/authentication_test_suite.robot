@@ -13,11 +13,10 @@ Create A Customer Account
 Login with Customer Account
     [Tags]    smoke test
     Login To Your Account    ${USERNAME}    ${PASSWORD} 
-    Click Login Button
     [Teardown]    Log Out From Your Account
     
 Login with Wrong Customer Account
-    [Tags]    test system
+    [Tags]    smoke test
     Login To Your Account    ${W_USERNAME}    ${W_PASSWORD}     
     Click Login Button
     Verify Error Message

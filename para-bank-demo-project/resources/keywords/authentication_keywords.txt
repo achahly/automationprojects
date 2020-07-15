@@ -10,7 +10,8 @@ Login To Your Account
     [Arguments]    ${username}    ${password}
     Enter Your Username    ${username}
     Enter Your Password    ${password}
-
+    Click Login Button
+    
 Enter Your Username
     [Arguments]    ${username}
     Wait Until Page Contains Element    ${USERNAME XPATH}

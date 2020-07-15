@@ -19,4 +19,9 @@ ${ZIP}    20532
 ${SSN}    15324
 ${N_USERNAME}    adnane
 ${N_PASSWORD}    test
+${ACC_OVERVIEW TITLE}    Accounts Overview
+${TRSF FUNDS TITLE}    Transfer Funds 
+${AMOUNT}     100
+${FROM ACCOUNT}    13344    
+${TO ACCOUNT}    13344     
 ${STR_TO_REPLACE}    SELENIUM_PLACEHOLDER_CHANGE_ME 

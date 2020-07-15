@@ -19,6 +19,14 @@ ${R_USERNAME XPATH}    //input[@id="customer.username"]
 ${R_PASSWORD XPATH}    //input[@id="customer.password"]
 ${CONFIRM_PASSWORD XPATH}    //*[@id="repeatedPassword"]
 ${FORM_REGISTER_BTN XPATH}    //input[@value="Register"]
-
-
-#### j essaye dans cette partie locator.txt d utiliser les differents d ecritures d un xpath #####
+${ACC OVERVIEW XPATH}    //a[contains(.,"Accounts Overview")]
+${ACC TABLE XPATH}    //*[@id="accountTable"]
+${ACC_COLUMN XPATH}    //th[contains(text(),"Account")]
+${BALANCE_COLUMN XPATH}    //th[contains(text(),"Balance")]    
+${AMOUNT_COLUMN XPATH}    //th[contains(text(),"Available Amount")]
+${TRSF FUNDS XPATH}    //a[contains(.,"Transfer Funds")]
+${AMOUNT XPATH}    //*[@id="amount"]
+${FROM_ACC XPATH}    //*[@id="fromAccountId"]
+${TO_ACC XPATH}    //*[@id="toAccountId"]
+${TRASNFER BTN XPATH}    //input[@value="Transfer"]
+#### j essaye dans cette partie locator.txt d utiliser les differents ecritures d un xpath #####

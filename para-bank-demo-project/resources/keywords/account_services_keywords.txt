@@ -1,0 +1,34 @@
+*** Settings ***
+Library    SeleniumLibrary    
+Resource    ${CURDIR}/../locators/locators.txt
+Resource    ${CURDIR}/shared_keywords.txt
+Resource    ${CURDIR}/authentication_keywords.txt
+Resource    ${CURDIR}/../variables/variables.txt
+
+*** Keywords ***   
+
+Go to Account Over View
+    Wait Until Page Contains Element    ${ACC OVERVIEW XPATH}
+    Click Simple or With JS    ${ACC OVERVIEW XPATH}  
+    Wait Until Page Contains    ${ACC_OVERVIEW TITLE}
+    
+Verify Your Account 
+    Wait Until Page Contains Element    ${ACC TABLE XPATH}   
+	Wait Until Page Contains Element    ${ACC_COLUMN XPATH}  
+	Wait Until Page Contains Element    ${BALANCE_COLUMN XPATH}       
+	Wait Until Page Contains Element    ${AMOUNT_COLUMN XPATH}   
+	  
+Go to Transfer Funds  
+    Wait Until Page Contains Element    ${TRSF FUNDS XPATH} 
+    Click Simple or With JS    ${TRSF FUNDS XPATH}  
+    Wait Until Page Contains    ${TRSF FUNDS TITLE}
+    Wait Until Page Contains Element    ${ACC TABLE XPATH}   
+    
+Make A Transfer
+    [Arguments]    ${amount}    ${from_account}    ${to_account}        	
+    Wait Until Page Contains Element    ${AMOUNT XPATH}
+    Input Text    ${AMOUNT XPATH}    ${amount}    
+    Select From List By Value    ${FROM_ACC XPATH}    ${from_account}
+    Select From List By Value    ${TO_ACC XPATH}    ${to_account}    
+    Wait Until Page Contains Element    ${TRASNFER BTN XPATH}
+    Click Simple or With JS   ${TRASNFER BTN XPATH}    
