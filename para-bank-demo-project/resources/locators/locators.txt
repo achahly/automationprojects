@@ -1,0 +1,24 @@
+*** Settings ***
+Resource   ${CURDIR}/../variables/variables.txt
+
+*** Variables ***
+${USERNAME XPATH}    //input[@name="username"]
+${PASSWORD XPATH}    //input[@name="password"]
+${LOGIN_BTN XPATH}    //*[@id="loginPanel"]//input[@value="Log In"]
+${LOGOUT_BTN XPATH}    //a[contains(.,"Log Out")]
+${REGISTER_BTN XPATH}    //a[contains(text(),"Register")]
+${F_NAME XPATH}    //*[@id="customer.firstName"]
+${L_NAME XPATH}    //*[@id="customer.lastName"]
+${ADDRESS XPATH}    //input[contains(@id,"street")]
+${CITY XPATH}    //input[contains(@id,"city")]
+${STATE XPATH}    //input[contains(@id,"state")]
+${ZIP XPATH}    //td//input[@id="customer.address.zipCode"]
+${PHONE XPATH}    //td//input[@id="customer.phoneNumber"][@name="customer.phoneNumber"]
+${SSN XPATH}    //*[@id="customer.ssn"]
+${R_USERNAME XPATH}    //input[@id="customer.username"]
+${R_PASSWORD XPATH}    //input[@id="customer.password"]
+${CONFIRM_PASSWORD XPATH}    //*[@id="repeatedPassword"]
+${FORM_REGISTER_BTN XPATH}    //input[@value="Register"]
+
+
+#### j essaye dans cette partie locator.txt d utiliser les differents d ecritures d un xpath #####

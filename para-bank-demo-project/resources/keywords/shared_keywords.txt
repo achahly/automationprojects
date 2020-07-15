@@ -1,0 +1,26 @@
+*** Settings ***
+Library    SeleniumLibrary    
+Library    BuiltIn
+Library    Collections
+Library    String
+Resource   ${CURDIR}/../variables/variables.txt
+
+*** Keywords ***
+
+Open My browser
+    Open Browser    ${URL}     ${BROWSER}     ${ALIAS}
+
+Click Simple or With JS 
+    [Arguments]    ${locator}    
+    ${Status}=  Run Keyword And Return Status    Click Element  ${locator}    
+    Run Keyword If    '${status}'=='False'    Click Element With Javascript    ${locator}
+    
+Click Element With Javascript
+    [Arguments]    ${locator}
+    Wait Until Element Is Visible    ${locator}    
+    Execute Javascript    document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();
+
+Replace Value In XPATH
+    [Arguments]    ${xpath}    ${name}
+    ${loc}=    Replace String    ${xpath}    ${STR_TO_REPLACE}    ${name}
+    [Return]    ${loc}

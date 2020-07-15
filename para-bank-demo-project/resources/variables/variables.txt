@@ -1,0 +1,22 @@
+*** Variables ***
+${URL}   https://parabank.parasoft.com/parabank/index.htm
+${BROWSER}   chrome
+${ALIAS}  browser   
+${USERNAME}    john
+${PASSWORD}    demo
+${W_USERNAME}    tttt
+${W_PASSWORD}    eeee
+${ERR_MSG}    The username and password could not be verified.
+${ACC CREATED_MSG}    Your account was created successfully. You are now logged in.
+${SIGN UP_TITLE}    Signing up is easy!
+${F_NAME}    adnane
+${L_NAME}    adnane
+${ADDRESS}   La gironde
+${CITY}    CASABLANCA
+${STATE}    CASABLANCA SETTAT
+${PHONE_NUMBER}    06000536425
+${ZIP}    20532
+${SSN}    15324
+${N_USERNAME}    adnane
+${N_PASSWORD}    test
+${STR_TO_REPLACE}    SELENIUM_PLACEHOLDER_CHANGE_ME 

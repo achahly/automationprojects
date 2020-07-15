@@ -1,0 +1,67 @@
+*** Settings ***
+Library    SeleniumLibrary    
+Resource    ${CURDIR}/../locators/locators.txt
+Resource    ${CURDIR}/shared_keywords.txt
+Resource    ${CURDIR}/../variables/variables.txt
+
+*** Keywords ***    
+
+Login To Your Account
+    [Arguments]    ${username}    ${password}
+    Enter Your Username    ${username}
+    Enter Your Password    ${password}
+
+Enter Your Username
+    [Arguments]    ${username}
+    Wait Until Page Contains Element    ${USERNAME XPATH}
+    Input Text    ${USERNAME XPATH}    ${username}  
+    
+Enter Your Password
+    [Arguments]    ${password}
+    Wait Until Page Contains Element    ${PASSWORD XPATH}
+    Input Text    ${PASSWORD XPATH}    ${password}     
+    
+Click Login Button       
+    Wait Until Page Contains Element    ${LOGIN_BTN XPATH}
+    Click Simple or With JS    ${LOGIN_BTN XPATH}
+    
+Log Out From Your Account
+    Wait Until Page Contains Element    ${LOGOUT_BTN XPATH} 
+    Click Simple or With JS    ${LOGOUT_BTN XPATH}   
+    Close All Browsers
+    
+Verify Error Message
+    Wait Until Page Contains    ${ERR_MSG}    
+    
+Go To Register Page 
+    Wait Until Page Contains Element    ${REGISTER_BTN XPATH}
+    Click Simple or With JS    ${REGISTER_BTN XPATH}   
+    Wait Until Page Contains    ${SIGN UP_TITLE}
+    
+Fill The Registration Form  
+    [Arguments]    ${first_name}    ${last_name}     ${address}    ${city}    ${state}    ${zip}     ${phone_number}   ${ssn}   ${username}    ${password}
+    Wait Until Page Contains Element    ${F_NAME XPATH}  
+    Input Text    ${F_NAME XPATH}    ${first_name}      
+    Wait Until Page Contains Element    ${L_NAME XPATH}
+    Input Text    ${L_NAME XPATH}    ${last_name}         
+    Wait Until Page Contains Element    ${ADDRESS XPATH} 
+    Input Text    ${ADDRESS XPATH}    ${address}
+    Wait Until Page Contains Element    ${CITY XPATH} 
+    Input Text    ${CITY XPATH}    ${city}        
+    Wait Until Page Contains Element    ${STATE XPATH} 
+    Input Text    ${STATE XPATH}    ${state} 
+    Wait Until Page Contains Element    ${ZIP XPATH} 
+    Input Text    ${ZIP XPATH}    ${zip}         
+    Wait Until Page Contains Element    ${PHONE XPATH} 
+    Input Text    ${PHONE XPATH}    ${state}      
+    Wait Until Page Contains Element    ${SSN XPATH} 
+    Input Text    ${SSN XPATH}    ${ssn}     
+    Wait Until Page Contains Element    ${R_USERNAME XPATH} 
+    Input Text    ${R_USERNAME XPATH}    ${username} 
+    Wait Until Page Contains Element    ${R_PASSWORD XPATH} 
+    Input Text    ${R_PASSWORD XPATH}    ${password}         
+    Wait Until Page Contains Element    ${CONFIRM_PASSWORD XPATH} 
+    Input Text    ${CONFIRM_PASSWORD XPATH}    ${password}    
+    Click Simple or With JS    ${FORM_REGISTER_BTN XPATH}
+    Wait Until Page Contains    ${ACC CREATED_MSG}  
+     
