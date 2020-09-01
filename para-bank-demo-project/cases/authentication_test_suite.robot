@@ -18,7 +18,6 @@ Login with Customer Account
 Login with Wrong Customer Account
     [Tags]    smoke test
     Login To Your Account    ${W_USERNAME}    ${W_PASSWORD}     
-    Click Login Button
     Verify Error Message
     
     
