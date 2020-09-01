@@ -29,7 +29,6 @@ Click Login Button
 Log Out From Your Account
     Wait Until Page Contains Element    ${LOGOUT_BTN XPATH} 
     Click Simple or With JS    ${LOGOUT_BTN XPATH}   
-    Close All Browsers
     
 Verify Error Message
     Wait Until Page Contains    ${ERR_MSG}    
